@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 56%), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 * {
@@ -9,19 +9,19 @@
 }
 
 body {
-  background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  background-color: #d4cf97;
+  font-family: monospace;
 }
 
 .container {
-  margin: 30px auto;
   width: 350px;
+  margin: 30px auto;
 }
 
 h1 {
@@ -29,10 +29,16 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: 25px;
+  color: #8c6163;
+  text-align: center;
+}
+
 h3 {
-  border-bottom: 1px solid #bbb;
   padding-bottom: 10px;
   margin: 40px 0 10px;
+  border-bottom: 2px solid #81b6ab;
 }
 
 h4 {
@@ -41,12 +47,15 @@ h4 {
 }
 
 .inc-exp-container {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+  padding: 20px;
+  font-family: inherit;
+  font-size: 20px;
+  background-color: aliceblue;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
 }
 
 .inc-exp-container > div {
@@ -55,7 +64,7 @@ h4 {
 }
 
 .inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
+  border-right: 2px solid #a67376;
 }
 
 .money {
@@ -65,39 +74,50 @@ h4 {
 }
 
 .money.plus {
-  color: #2ecc71;
+  color: #43a047;
 }
 
 .money.minus {
   color: #c0392b;
 }
 
-label {
-  display: inline-block;
-  margin: 10px 0;
+input[type="text"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #a67376;
+  border-radius: 6px;
+  background-color: aliceblue;
+  font-family: inherit;
+  font-size: 18px;
+  outline-color: #81b6ab;
+  box-shadow: var(--box-shadow);
 }
 
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
+input:placeholder-shown {
+  color: black;
 }
 
 .btn {
-  cursor: pointer;
-  background-color: #9c88ff;
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
   display: block;
-  font-size: 16px;
+  width: 100%;
   margin: 10px 0 30px;
   padding: 10px;
-  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  background-color: #a67376;
+  font-family: inherit;
+  font-size: 16px;
+  color: #fff;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(0.99);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
 
 .btn:focus,
@@ -112,18 +132,20 @@ input[type='number'] {
 }
 
 .list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
+  position: relative;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  padding: 10px;
   margin: 10px 0;
+  padding: 10px;
+  background-color: aliceblue;
+  font-size: 18px;
+  color: black;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
 }
 
 .list li.plus {
-  border-right: 5px solid #2ecc71;
+  border-right: 5px solid #43a047;
 }
 
 .list li.minus {
@@ -131,19 +153,21 @@ input[type='number'] {
 }
 
 .delete-btn {
-  cursor: pointer;
-  background-color: #e74c3c;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
   position: absolute;
   top: 50%;
   left: 0;
+  padding: 2px 5px;
+  border: 0;
+  border-radius: 3px 0 0 3px;
+  background-color: #c0392b;
+  color: aliceblue;
+  font-size: 15px;
+  line-height: 20px;
   transform: translate(-100%, -50%);
-  opacity: 0;
   transition: opacity 0.3s ease;
+  opacity: 0;
+  cursor: pointer;
+  z-index: -1;
 }
 
 .list li:hover .delete-btn {
