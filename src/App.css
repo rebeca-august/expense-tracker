@@ -155,7 +155,7 @@ input:placeholder-shown {
 .delete-btn {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -1px;
   padding: 2px 5px;
   border: 0;
   border-radius: 3px 0 0 3px;
@@ -167,7 +167,6 @@ input:placeholder-shown {
   transition: opacity 0.3s ease;
   opacity: 0;
   cursor: pointer;
-  z-index: -1;
 }
 
 .list li:hover .delete-btn {
